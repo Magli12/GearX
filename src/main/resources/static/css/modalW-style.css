@@ -1,0 +1,203 @@
+/* Finestra Modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin-left: -25px;
+    max-height: 70%;
+    overflow-y: auto;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #457b9d;
+}
+
+.post-header .post-meta {
+    text-align: right;
+    margin-left: 60px;
+}
+
+/* Comment Section */
+.comment-section {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #ade8f4;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Nuovo commento */
+.new-comment {
+    margin-bottom: 20px;
+}
+
+.new-comment textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: hsl(0, 0%, 20%);
+    transition: border-color 0.3s ease;
+    resize: none;
+    margin-top: 20px;
+    background-color: #caf0f8;;
+}
+
+.new-comment textarea:focus {
+    border-color: hsl(181, 81%, 55%);
+    outline: none;
+}
+
+.new-comment button {
+    padding: 10px 15px;
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-comment button:hover {
+    background-color: #48cae4;
+}
+
+/* Commenti */
+.comment {
+    background-color: #caf0f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid grey;
+}
+
+.comment-header {
+    font-size: 12px;
+    color: hsl(0, 0%, 40%);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-body {
+    font-size: 14px;
+    color: hsl(0, 0%, 20%);
+    line-height: 1.5;
+}
+
+/* Modale Nuovo Post */
+#newPostModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Contenuto della modale del nuovo post */
+#newModalContent {
+    position: fixed;
+    background-color: #457b9d;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border: 0px solid #3498db;
+    border-radius: 10px;
+    box-shadow: none;/*0 4px 8px rgba(0, 0, 0, 0.2); */
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10%);
+}
+
+/* Chiusura della modale del nuovo post */
+#newModalContent .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#newModalContent .close:hover,
+#newModalContent .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Stili per il titolo e il contenuto della modale */
+#newModalContent h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+#newModalContent textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#newModalContent button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#newModalContent button:hover {
+    background-color: #2980b9;
+}
+

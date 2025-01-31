@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<posts>
+  <th:block th:each="post : ${posts}">
+    <post>
+      <idPost th:text="${post.idPost}"/>
+      <author th:text="${post.author.username}"/>
+      <ora th:text="${post.ora}"/>
+      <data th:text="${post.data}"/>
+      <testo th:text="${post.contenuto}"/>
+    </post>
+  </th:block>
+</posts>
+
+

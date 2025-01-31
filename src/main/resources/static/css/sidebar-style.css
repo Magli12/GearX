@@ -1,0 +1,43 @@
+/* Form nella sidebar */
+form {
+    margin: 0; 
+}
+
+.sidebar {
+    position: fixed; 
+    left: 0; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #457b9d;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: 2px solid transparent; 
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    width: 100%; 
+    text-align: center;
+    display: inline-block;
+    border-radius: 24px;
+}
+
+.nav-button:hover {
+    border-color: grey; 
+    background-color: #a8dadc;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comments>
+    <th:block th:each="commento : ${commenti}">
+        <comment>
+            <idCommento th:text="${commento.idCommento}"></idCommento>
+            <autore th:text="${commento.author.username}"></autore>
+            <contenuto th:text="${commento.contenuto}"></contenuto>
+            <data th:text="${commento.dataCommento}"></data>
+            <ora th:text="${commento.oraCommento}"></ora>
+        </comment>
+    </th:block>
+</comments>
+

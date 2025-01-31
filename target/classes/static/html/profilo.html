@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profilo Personale</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/sidebar-style.css">
+        <script src="../js/profile.js" defer></script>
+    </head>
+    <body>
+        <div class="sidebar">
+            <img class="logo" src="../img/Gear.png" alt="Logo">
+            <form action="home.html">
+                <input type="submit" value="Home" class="nav-button">
+            </form>
+            <form action="profilo.html">
+                <input type="submit" value="Il mio Profilo" class="nav-button">
+            </form>
+            <form action="/logout">
+                <input type="submit" value="Logout" class="nav-button">
+            </form>
+        </div>
+        <div class="main-container">
+            <h2 class="page-title">Profilo Personale</h2>
+            <div class="profile-container">
+                <p><strong>Nome:</strong> <span id="name" class="info"></span></p>
+                <p><strong>Cognome:</strong> <span id="cognome" class="info"></span></p>
+                <p><strong>Data di Nascita:</strong> <span id="birthdate" class="info"></span></p>
+                <p><strong>Nome Utente:</strong> <span id="username" class="info"></span></p>
+                <p><strong>Email:</strong> <span id="email" class="info"></span></p>
+            </div>
+        </div>
+    </body>
+</html>

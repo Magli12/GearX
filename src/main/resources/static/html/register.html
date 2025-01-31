@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registrazione</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/login-register-style.css">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <img class="logo" src="../img/Gear-Dark.png" alt="Logo">
+            <div class="main-container">
+                <h2 class="page-title">Registrazione</h2>
+
+                <!-- Messaggi di errore -->
+                <div id="username-error" class="error-message" style="display: none;">
+                    Username già utilizzato
+                </div>
+                <div id="email-error" class="error-message" style="display: none;">
+                    Email già utilizzata
+                </div>
+
+                <form action="/register" method="post">
+                    <div class="form-row">
+                        <div class="form-column">
+                            <div class="form-group-register">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" required>
+                            </div>
+                            <div class="form-group-register">
+                                <label for="cognome">Cognome</label>
+                                <input type="text" id="cognome" name="cognome" required>
+                            </div>
+                            <div class="form-group-register">
+                                <label for="dataDiNascita">Data di Nascita</label>
+                                <input type="date" id="dataDiNascita" name="dataDiNascita" required>
+                            </div>
+                            <div class="form-group-register">
+                                <label>Sesso</label>
+                                <div class="input-container">
+                                    <input type="radio" id="male" name="sesso" value="Maschio" required>
+                                    <p for="male">Uomo</p>
+                                    <input type="radio" id="female" name="sesso" value="Femmina" required>
+                                    <p for="female">Donna</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-column">
+                            <div class="form-group-register">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="username" required>
+                            </div>
+                            <div class="form-group-register">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group-register">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <div class="form-group-register">
+                                <label for="confirm-password">Conferma Password</label>
+                                <input type="password" id="confirm-password" name="confirm-password" required>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit">Registrati</button>
+                </form>
+                <div class="change-container">
+                    <label>Hai già un account?</label>
+                    <a href="login.html" class="change-btn">Accedi</a>
+                </div>
+            </div>
+        </div>
+    <script>
+        document.querySelector("form").addEventListener("submit", function (event) {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+            const birthDate = new Date(document.getElementById("dataDiNascita").value);
+            const today = new Date();
+            const ageLimitDate = new Date();
+            ageLimitDate.setFullYear(today.getFullYear() - 13);
+
+            // Controllo che le password coincidano
+            if (password !== confirmPassword) {
+                alert("Le password non corrispondono!");
+                event.preventDefault();
+                return;
+            }
+
+            // Controllo che la data di nascita non sia futura
+            if (birthDate > today) {
+                alert("La data di nascita non può essere nel futuro!");
+                event.preventDefault();
+                return;
+            }
+
+            // Controllo almeno 13 anni
+            if (birthDate > ageLimitDate) {
+                alert("Devi avere almeno 13 anni per registrarti!");
+                event.preventDefault();
+                return;
+            }
+        });
+
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            if (urlParams.has("usernameError")) {
+                document.getElementById("username-error").style.display = "block";
+            }
+
+            if (urlParams.has("emailError")) {
+                document.getElementById("email-error").style.display = "block";
+            }
+
+            const today = new Date();
+            const ageLimitDate = new Date();
+            ageLimitDate.setFullYear(today.getFullYear() - 13);
+            const maxDate = ageLimitDate.toISOString().split("T")[0];
+
+            // Imposta la data massima sul campo data di nascita
+            document.getElementById("dataDiNascita").setAttribute("max", maxDate);
+        };
+
+    </script>
+    </body>
+</html>

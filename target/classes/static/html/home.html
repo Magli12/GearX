@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Elenco di Post</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/home-style.css">
+        <link rel="stylesheet" href="../css/sidebar-style.css">
+        <link rel="stylesheet" href="../css/modalW-style.css">
+        <script src="../js/newPost.js" defer></script>
+        <script src="../js/loadPosts.js" defer></script>
+    </head>
+
+    <body>
+        <div class="sidebar">
+            <img class="logo" src="../img/Gear.png" alt="Logo">
+            <form action="home.html">
+                <input type="submit" value="Home" class="nav-button">
+            </form>
+            <form action="profilo.html">
+                <input type="submit" value="Il mio Profilo" class="nav-button">
+            </form>
+            <form action="/logout">
+                <input type="submit" value="Logout" class="nav-button">
+            </form>
+        </div>
+
+        <div class="main-container">
+            <h1 class="page-title">Home</h1>
+
+            <button class="button" onclick="openNewPostModal()">Nuovo post</button>
+
+            <!-- Modale per il nuovo post -->
+            <div class="modal-overlay"></div>
+            <div id="newPostModal" class="modal">
+                <div id="newModalContent" class="modal-content">
+                    <span class="close" onclick="closeNewPostModal()">×</span>
+
+                    <div class="main-container">
+                        <h1 class="page-title">Crea un nuovo post</h1>
+
+                        <form id="postForm">
+                            <div class="form-group">
+                                <label for="post-content">Scrivi il tuo post:</label>
+                                <textarea id="post-content" name="post-content" rows="6" placeholder="Testo..." required></textarea>
+                            </div>
+                            <button type="submit" class="button">Pubblica</button>
+                        </form>
+
+                        <div id="message" class="hidden"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-overlay"></div>
+            <div id="postModal" class="modal">
+                <div id="modalContent" class="modal-content">
+                    <span class="close" onclick="closeModal()">×</span>
+
+                    <div id="modalPostHeader" class="post-header"></div>
+
+                    <div id="modalPostBody" class="post-content"></div>
+                    <div id="message-comment" class="hidden"></div>
+                    <div id="modalNewComment" class="new-comment"></div>
+
+                    <div id="modalCommentSection" class="comment-section"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

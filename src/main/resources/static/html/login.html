@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Form</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/login-register-style.css">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <img class="logo" src="../img/Gear-Dark.png" alt="Logo">
+            <div class="main-container">
+                <h2 class="page-title">Login</h2>
+
+                <!-- Messaggio di errore -->
+                <div id="error-message" style="color: red; display: none;">
+                    Username o password incorretti
+                </div>
+
+                <form action="/login" method="post">
+                    <div class="form-group-login">
+                        <label for="username">Username</label>
+                        <input type="text" class="login-input" id="username" name="username" required>
+                    </div>
+                    <div class="form-group-login">
+                        <label for="password">Password</label>
+                        <input type="password" class="login-input" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Accedi</button>
+                </form>
+                <div class="change-container">
+                    <label>Non hai un account?</label>
+                    <a href="/html/register.html" class="change-btn"> Registrati </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Mostra il messaggio di errore se il parametro "error" è presente nell'URL
+            window.onload = function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has('error')) {
+                    document.getElementById('error-message').style.display = 'block';
+                }
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+/*CSS login e register */
+
+/*Comuni*/
+.wrapper {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%; 
+}
+
+.logo {
+    margin-bottom: 20px; 
+    width: 150px;
+    height: 150px;
+    margin-top: 0px;
+}
+
+.change-container {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.change-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00b4d8;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.change-btn:hover {
+    background-color: #48cae4;
+}
+
+/* Login */
+
+.form-group-login {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.login-input {
+    width: 70%; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: hsl(0, 0%, 20%);
+    transition: border-color 0.3s;
+}
+
+/* Register */
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-column {
+    width: 48%;
+}
+
+.form-group-register {
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    align-items: left;
+}
+
+p {
+    color: hsl(0, 0%, 25%);
+}
+
+.error-message {
+    color: red;
+    text-align: center; /* Allinea il testo al centro */
+    margin: 10px 0; /* Spaziatura verticale */
+}
